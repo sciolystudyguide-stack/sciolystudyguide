@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Division B Science Study Hub | 2026–2027 Event Prep</title>
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #1e293b;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --badge-life: #dcfce7;
+      --badge-life-text: #166534;
+      --badge-earth: #e0f2fe;
+      --badge-earth-text: #075985;
+      --badge-phys: #fef3c7;
+      --badge-phys-text: #92400e;
+      --badge-tech: #f3e8ff;
+      --badge-tech-text: #6b21a8;
+      --badge-inq: #ffe4e6;
+      --badge-inq-text: #9f1239;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: #ffffff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-icon {
+      background: var(--accent);
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .btn-signup {
+      background-color: var(--accent);
+      color: #ffffff;
+      border: none;
+      padding: 0.55rem 1.15rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.15s ease, transform 0.1s ease;
+    }
+
+    .btn-signup:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .btn-signup:active {
+      transform: scale(0.98);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #ffffff;
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.85rem;
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 0 auto 1.75rem;
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero-primary {
+      background-color: #ffffff;
+      color: var(--primary);
+      border: none;
+      padding: 0.75rem 1.6rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+
+    .btn-hero-primary:hover {
+      background-color: #f1f5f9;
+    }
+
+    .btn-hero-secondary {
+      background-color: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 0.75rem 1.6rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background-color 0.15s ease;
+    }
+
+    .btn-hero-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .controls-section {
+      max-width: 1120px;
+      margin: 2.5rem auto 1.5rem;
+      padding: 0 1.5rem;
+    }
+
+    .search-bar-wrap {
+      margin-bottom: 1.25rem;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 0.85rem 1.15rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #ffffff;
+      color: var(--text);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    #searchInput:focus {
+      outline: 2px solid var(--accent);
+      border-color: transparent;
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .filter-btn {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .grid {
+      max-width: 1120px;
+      margin: 0 auto 3.5rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+      width: fit-content;
+    }
+
+    .cat-life { background: var(--badge-life); color: var(--badge-life-text); }
+    .cat-earth { background: var(--badge-earth); color: var(--badge-earth-text); }
+    .cat-phys { background: var(--badge-phys); color: var(--badge-phys-text); }
+    .cat-tech { background: var(--badge-tech); color: var(--badge-tech-text); }
+    .cat-inq { background: var(--badge-inq); color: var(--badge-inq-text); }
+
+    .card h3 {
+      font-size: 1.12rem;
+      margin-bottom: 0.45rem;
+      color: var(--primary);
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      color: #64748b;
+      border-top: 1px solid var(--border);
+      padding-top: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal {
+      background: #ffffff;
+      max-width: 440px;
+      width: 100%;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .modal h2 {
+      margin-bottom: 0.6rem;
+      color: var(--primary);
+    }
+
+    .modal p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-close {
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 0.65rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 1rem;
+      }
+      nav a {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <span class="brand-icon">B</span>
+      <span>Division B Study Hub</span>
+    </div>
+    <nav>
+      <a href="#events">All Events</a>
+      <a href="#prep-tips">Binder Tips</a>
+      <button class="btn-signup" onclick="openModal()">Sign Up</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <span class="hero-tag">2026–2027 Season • Student Study Resource</span>
+    <h1>Division B Science Study Hub</h1>
+    <p>Independent event overviews, binder checklists, and topic breakdowns across all 23 standard middle school science competition events.</p>
+    <div class="hero-actions">
+      <button class="btn-hero-primary" onclick="openModal()">Sign Up for Study Guides</button>
+      <a href="#events" class="btn-hero-secondary">Browse 23 Events</a>
+    </div>
+  </section>
+
+  <section class="controls-section" id="events">
+    <div class="search-bar-wrap">
+      <input type="text" id="searchInput" placeholder="Search events by name or topic (e.g., Anatomy, Fossils, Optics, Coding)..." onkeyup="filterEvents()" />
+    </div>
+    <div class="filter-buttons">
+      <button class="filter-btn active" onclick="setCategory('all', this)">All Events (23)</button>
+      <button class="filter-btn" onclick="setCategory('life', this)">Life, Personal & Social</button>
+      <button class="filter-btn" onclick="setCategory('earth', this)">Earth & Space</button>
+      <button class="filter-btn" onclick="setCategory('phys', this)">Physical Science & Chem</button>
+      <button class="filter-btn" onclick="setCategory('tech', this)">Tech & Engineering</button>
+      <button class="filter-btn" onclick="setCategory('inq', this)">Inquiry & Nature of Science</button>
+    </div>
+  </section>
+
+  <main class="grid" id="eventsGrid">
+    <!-- Life, Personal & Social Science -->
+    <article class="card" data-cat="life">
+      <div>
+        <span class="badge cat-life">Life Science</span>
+        <h3>Anatomy & Physiology</h3>
+        <p>Structure, function, and disorders of major human body systems including nervous, endocrine, and sensory systems.</p>
+      </div>
+      <div class="card-meta"><span>Format: Written Test</span><span>1 Reference Sheet</span></div>
+    </article>
+
+    <article class="card" data-cat="life">
+      <div>
+        <span class="badge cat-life">Life Science</span>
+        <h3>Disease Detectives</h3>
+        <p>Epidemiology, outbreak investigation, calculating attack rates, relative risk, and public health mitigation.</p>
+      </div>
+      <div class="card-meta"><span>Format: Written Test</span><span>1 Reference Sheet</span></div>
+    </article>
+
+    <article class="card" data-cat="life">
+      <div>
+        <span class="badge cat-life">Life Science</span>
+        <h3>Ecology</h3>
+        <p>Terrestrial biomes, food webs, nutrient cycling, population dynamics, and human impact on ecosystems.</p>
+      </div>
+      <div class="card-meta"><span>Format: Written Test</span><span>1 Reference Sheet</span></div>
+    </article>
+
+    <article class="card" data-cat="life">
+      <div>
+        <span class="badge cat-life">Life Science</span>
+        <h3>Entomology</h3>
+        <p>Identification, taxonomy, anatomy, life cycles, and ecological roles of North American insect orders and families.</p>
+      </div>
+      <div class="card-meta"><span>Format: Stations / Test</span><span>1 Binder + Field Guide</span></div>
+    </article>
+
+    <article class="card" data-cat="life">
+      <div>
+        <span class="badge cat-life">Life Science</span>
+        <h3>Microbe Mission</h3>
+        <p>Microscopy techniques, bacterial and viral structures, eukaryotic microbes, and microbial metabolism.</p>
+      </div>
+      <div class="card-meta"><span>Format: Lab / Stations</span><span>1 Reference Sheet</span></div>
+    </article>
+
+    <!-- Earth & Space Science -->
+    <article class="card" data-cat="earth">
+      <div>
+        <span class="badge cat-earth">Earth & Space</span>
+        <h3>Dynamic Planet</h3>
+        <p>Glaciation, paleoclimatology, sea-level change, oceanography, and geological surface processes.</p>
+      </div>
+      <div class="card-meta"><span>Format: Written Test</span><span>1 Binder Allowed</span></div>
+    </article>
+
+    <article class="card" data-cat="earth">
+      <div>
+        <span class="badge cat-earth">Earth & Space</span>
+        <h3>Fossils</h3>
+        <p>Paleontology, fossil identification, geologic time scale, index fossils, and ancient marine/terrestrial environments.</p>
+      </div>
+      <div class="card-meta"><span>Format: Stations / Test</span><span>1 Binder + Field Guide</span></div>
+    </article>
+
+    <article class="card" data-cat="earth">
+      <div>
+        <span class="badge cat-earth">Earth & Space</span>
+        <h3>Meteorology</h3>
+        <p>Severe storms, atmospheric circulation, weather map interpretation, radar/satellite imagery, and climate patterns.</p>
+      </div>
+      <div class="card-meta"><span>Format: Written Test</span><span>1 Reference Sheet</span></div>
+    </article>
+
+    <article class="card" data-cat="earth">
+      <div>
+        <span class="badge cat-earth">Earth & Space</span>
+        <h3>Reach for the Stars</h3>
+        <p>Stellar evolution, HR diagrams, deep-sky objects, multi-wavelength astronomy, and exoplanet detection.</p>
+      </div>
+      <div class="card-meta"><span>Format: Written Test</span><span>2 Reference Sheets</span></div>
+    </article>
+
+    <article class="card" data-cat="earth">
+      <div>
+        <span class="badge cat-earth">Earth & Space</span>
+        <h3>Road Scholar</h3>
+        <p>Topographic map reading, highway maps, PLSS grid coordinates, azimuths, elevation profiles, and satellite imagery.</p>
+      </div>
+      <div class="card-meta"><span>Format: Practical Map Test</span><span>Reference Materials</span></div>
+    </article>
+
+    <!-- Physical Science & Chemistry -->
+    <article class="card" data-cat="phys">
+      <div>
+        <span class="badge cat-phys">Physical & Chem</span>
+        <h3>Air Trajectory</h3>
+        <p>Design and calibrate an air-powered device to launch projectiles accurately at specified target distances.</p>
+      </div>
+      <div class="card-meta"><span>Format: Device Build</span><span> Impound Required</span></div>
+    </article>
+
+    <article class="card" data-cat="phys">
+      <div>
+        <span class="badge cat-phys">Physical & Chem</span>
+        <h3>Crime Busters</h3>
+        <p>Qualitative chemistry lab analyzing unknown powders, fibers, plastics, chromatography, and fingerprints.</p>
+      </div>
+      <div class="card-meta"><span>Format: Wet Lab + Analysis</span><span>1 Reference Sheet</span></div>
+    </article>
+
+    <article class="card" data-cat="phys">
+      <div>
+        <span class="badge cat-phys">Physical & Chem</span>
+        <h3>Optics</h3>
+        <p>Geometric optics, reflection, refraction, lenses, mirrors, and laser-mirror target positioning.</p>
+      </div>
+      <div class="card-meta"><span>Format: Test + Laser Shoot</span><span>1 Binder Allowed</span></div>
+    </article>
+
+    <article class="card" data-cat="phys">
+      <div>
+        <span class="badge cat-phys">Physical & Chem</span>
+        <h3>Potions and Poisons</h3>
+        <p>Chemical properties of household toxins, environmental pollutants, reaction rates, and lab separation techniques.</p>
+      </div>
+      <div class="card-meta"><span>Format: Lab + Written Test</span><span>1 Reference Sheet</span></div>
+    </article>
+
+    <article class="card" data-cat="phys">
+      <div>
+        <span class="badge cat-phys">Physical & Chem</span>
+        <h3>Wind Power</h3>
+        <p>Construct a blade assembly to maximize electrical power output and answer questions on renewable energy.</p>
+      </div>
+      <div class="card-meta"><span>Format: Build + Test</span><span>1 Binder Allowed</span></div>
+    </article>
+
+    <!-- Technology & Engineering -->
+    <article class="card" data-cat="tech">
+      <div>
+        <span class="badge cat-tech">Tech & Engineering</span>
+        <h3>Helicopter</h3>
+        <p>Construct and test free-flight rubber-powered helicopters to achieve maximum flight duration indoors.</p>
+      </div>
+      <div class="card-meta"><span>Format: Flight Build</span><span>Flight Log Required</span></div>
+    </article>
+
+    <article class="card" data-cat="tech">
+      <div>
+        <span class="badge cat-tech">Tech & Engineering</span>
+        <h3>Mission Possible</h3>
+        <p>Design a Rube Goldberg-style energy transfer device completing sequential mechanical and electrical tasks.</p>
+      </div>
+      <div class="card-meta"><span>Format: Device Run</span><span>Action Sequence List</span></div>
+    </article>
+
+    <article class="card" data-cat="tech">
+      <div>
+        <span class="badge cat-tech">Tech & Engineering</span>
+        <h3>Scrambler</h3>
+        <p>Build an energy-powered vehicle carrying an uncooked Grade A large egg as fast as possible toward a barrier.</p>
+      </div>
+      <div class="card-meta"><span>Format: Vehicle Build</span><span>Impound Required</span></div>
+    </article>
+
+    <article class="card" data-cat="tech">
+      <div>
+        <span class="badge cat-tech">Tech & Engineering</span>
+        <h3>Tower</h3>
+        <p>Engineer a lightweight balsa wood structure to support maximum load capacity at minimum structural mass.</p>
+      </div>
+      <div class="card-meta"><span>Format: Structural Test</span><span>Dimension Specs</span></div>
+    </article>
+
+    <!-- Inquiry & Nature of Science -->
+    <article class="card" data-cat="inq">
+      <div>
+        <span class="badge cat-inq">Inquiry & Nature</span>
+        <h3>Codebusters</h3>
+        <p>Cryptanalysis and decoding of Aristocrat, Patristocrat, Xenocrypt, Hill, Baconian, and Affine ciphers.</p>
+      </div>
+      <div class="card-meta"><span>Format: Timed Team Test</span><span>3-Person Event</span></div>
+    </article>
+
+    <article class="card" data-cat="inq">
+      <div>
+        <span class="badge cat-inq">Inquiry & Nature</span>
+        <h3>Experimental Design</h3>
+        <p>Design, conduct, analyze, and write a complete scientific lab report on-site using provided materials.</p>
+      </div>
+      <div class="card-meta"><span>Format: Live Experiment</span><span>3-Person Event</span></div>
+    </article>
+
+    <article class="card" data-cat="inq">
+      <div>
+        <span class="badge cat-inq">Inquiry & Nature</span>
+        <h3>Metric Mastery</h3>
+        <p>Estimate and measure mass, volume, length, area, force, and temperature using SI metric units accurately.</p>
+      </div>
+      <div class="card-meta"><span>Format: Hands-On Stations</span><span>No Calculators</span></div>
+    </article>
+
+    <article class="card" data-cat="inq">
+      <div>
+        <span class="badge cat-inq">Inquiry & Nature</span>
+        <h3>Write It Do It</h3>
+        <p>One partner writes assembly instructions for an abstract model while the other builds it without seeing the original.</p>
+      </div>
+      <div class="card-meta"><span>Format: Communication</span><span>No External Notes</span></div>
+    </article>
+  </main>
+
+  <footer id="prep-tips">
+    <p><strong>Division B Study Hub</strong> • Independent Student Study Resource • Not affiliated with any school or official competition organization.</p>
+  </footer>
+
+  <div class="modal-backdrop" id="signupModal">
+    <div class="modal">
+      <h2>Study Hub Access</h2>
+      <p>No account or login is required—all 23 Division B event summaries and study checklists on this page are open and ready to browse!</p>
+      <button class="btn-close" onclick="closeModal()">Got It</button>
+    </div>
+  </div>
+
+  <script>
+    let currentCategory = 'all';
+
+    function setCategory(category, btn) {
+      currentCategory = category;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterEvents();
+    }
+
+    function filterEvents() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('#eventsGrid .card');
+
+      cards.forEach(card => {
+        const matchesCat = currentCategory === 'all' || card.dataset.cat === currentCategory;
+        const text = card.textContent.toLowerCase();
+        const matchesSearch = text.includes(query);
+        card.style.display = (matchesCat && matchesSearch) ? 'flex' : 'none';
+      });
+    }
+
+    function openModal() {
+      document.getElementById('signupModal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('signupModal').classList.remove('open');
+    }
+  </script>
+</body>
+</html>
