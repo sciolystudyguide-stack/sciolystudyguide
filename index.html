@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Science Olympiad Portal | Parody Demo</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --accent: #0ea5e9;
+      --bg: #f8fafc;
+      --text: #0f172a;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .banner {
+      background: #fef08a;
+      color: #854d0e;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-bottom: 1px solid #fde047;
+    }
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 1.5rem;
+      background: linear-gradient(135deg, #1e3a8a, #0284c7);
+      color: white;
+    }
+    .hero h1 { font-size: 2.4rem; margin-bottom: 0.75rem; }
+    .hero p { max-width: 600px; margin: 0 auto 1.5rem; opacity: 0.9; }
+    .btn {
+      display: inline-block;
+      background: white;
+      color: var(--primary);
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
+    .btn:hover { background: #e0f2fe; }
+    .container {
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .card h3 { color: var(--primary); margin-bottom: 0.5rem; }
+    #status-box {
+      display: none;
+      max-width: 600px;
+      margin: 1.5rem auto 0;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    PARODY &amp; DEMO PAGE — Not affiliated with any official Science Olympiad organization.
+  </div>
+  <header>
+    <strong>Apex Valley SciOly (Parody Demo)</strong>
+    <nav>
+      <a href="#events">Events</a>
+      <a href="#schedule">Schedule</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>2026 Invitational Portal</h1>
+    <p>Fictional tournament mockup page ready to upload to GitHub Pages or Netlify Drop.</p>
+    <button class="btn" onclick="document.getElementById('status-box').style.display='block'">Check Tournament Status</button>
+    <div id="status-box">
+      <strong>Status:</strong> All events have been replaced by Competitive Paper Airplane Folding and Speed Snacking. Good luck!
+    </div>
+  </section>
+
+  <main class="container" id="events">
+    <div class="card">
+      <h3>Anatomy &amp; Physiology</h3>
+      <p>Room 204 &bull; 9:00 AM &ndash; 9:50 AM<br>Placeholder event card for layout demonstration.</p>
+    </div>
+    <div class="card">
+      <h3>Codebusters</h3>
+      <p>Room 112 &bull; 10:00 AM &ndash; 10:50 AM<br>Sample cipher challenge block for prototype testing.</p>
+    </div>
+    <div class="card">
+      <h3>Wright Stuff</h3>
+      <p>Main Gymnasium &bull; 11:00 AM &ndash; 12:30 PM<br>Mock flight log and inspection station details.</p>
+    </div>
+  </main>
+
+  <footer>
+    Fictional Parody Prototype &bull; Built for Demonstration Purposes Only
+  </footer>
+</body>
+</html>
